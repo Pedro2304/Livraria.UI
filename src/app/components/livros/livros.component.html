@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Livraria</h1>
+    <table class="table" *ngIf="livros && livros.length > 0">
+        <thead>
+        <tr>
+            <th scope="col">Id#</th>
+            <th scope="col">Título</th>
+            <th scope="col">Subtitulo</th>
+            <th scope="col">Cor da Capa</th>
+            <th scope="col">Preço</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let livro of livros">
+            <th>{{livro.id}}</th>
+            <td>{{livro.titulo}}</td>
+            <td>{{livro.subtitulo}}</td>
+            <td>{{livro.corDaCapa}}</td>
+            <td>{{livro.preco | currency: 'R$'}}</td>
+            <td><a [routerLink]="['/livros','alterar',livro.id]">Alterar</a></td>
+            <td><a [routerLink] = "[]" (click)="deleteLivro(livro.id)">Deletar</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!livros || livros.length === 0">Produtos não encontrados</p>
+</div>

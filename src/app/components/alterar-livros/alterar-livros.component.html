@@ -1,0 +1,32 @@
+
+<div class="container">
+    <h1>Alterar um livro</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="alterarLivro()">
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                 <input type="text" class="form-control bg-light" id="id" name="id" readonly [(ngModel)] ="alterarLivroRequest.id"> 
+                </div>
+                <div class="mb-3">
+                       <label for="Titulo" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" id="Titulo" name="Titulo" [(ngModel)] ="alterarLivroRequest.titulo"> 
+                </div>
+                <div class="mb-3">
+                    <label for="Subtitulo" class="form-label">Subtitulo</label>
+                    <input type="text" class="form-control" id="Subtitulo" name="Subtitulo" [(ngModel)] ="alterarLivroRequest.subtitulo">
+                </div>
+                <div class="mb-3">
+                    <label for="corDaCapa" class="form-label">Cor da Capa</label>
+                    <input type="text" class="form-control" id="corDaCapa" name="corDaCapa" [(ngModel)] ="alterarLivroRequest.corDaCapa">
+                </div>
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" class="form-control" id="preco" name="preco" [(ngModel)] ="alterarLivroRequest.preco">
+                </div>
+                <button type="submit" class="btn btn-primary">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
